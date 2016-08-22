@@ -4,7 +4,7 @@ This repository contains the exercises and supplementary material for course `02
 
 Installation
 ------------
-Please make sure that you read this section thoroughly before getting started with the exercises.
+Please make sure that you read this section thoroughly and follow the installation guide from scratch before getting started with the exercises.
 
 All exercises are written in Python programming language and formatted into Jupyter Notebooks. In order to run the exercises you must follow the below requirements:
 
