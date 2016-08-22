@@ -1,4 +1,4 @@
-Variational Auto-encoders Summerschool 2016
+DTU course 02456 Deep learning
 =======
 This repository contains the exercises and supplementary material for course [02456 deep learning](http://www.kurser.dtu.dk/02456).
 
