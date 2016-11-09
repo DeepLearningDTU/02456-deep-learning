@@ -1,7 +1,7 @@
 # Installation Guide
 > Installation Guide is maintained by Toke Faurby, [Toke.Faurby@gmail.com](mailto:toke.faurby@gmail.com), and Kristoffer Linder-Steinlein, [linder2411@gmail.com](mailto:linder2411@gmail.com).
 
-For this course we will be usin Amazon Web Services ([AWS](https://aws.amazon.com/products/)). AWS provide on-deman computing facilities. Most notably they provide servers with the powerfull [NVIDIA Tesla K80](http://www.nvidia.com/object/tesla-k80.html) graphics cards, which we will be using for this course. These servers are called [p2.xlarge](https://aws.amazon.com/ec2/instance-types/p2/), and cost about 1 $US per hour of runtime. For large tasks it is possible to save money by using [spot instances](https://aws.amazon.com/ec2/spot/pricing/). A spot instances let you bid on spare Amazon EC2 instances to name your own price for compute capacity. The Spot price fluctuates based on the supply and demand of available EC2 capacity. Spot prices are generally a lot lower, e.g. p2.xlarge costs about 0.2 $US, but you risk being outbid, and having your server shut down, without notice.
+For this course we will be using Amazon Web Services ([AWS](https://aws.amazon.com/products/)). AWS provide on-deman computing facilities. Most notably they provide servers with the powerfull [NVIDIA Tesla K80](http://www.nvidia.com/object/tesla-k80.html) graphics cards, which we will be using for this course. These servers are called [p2.xlarge](https://aws.amazon.com/ec2/instance-types/p2/), and cost about 1 $US per hour of runtime. For large tasks it is possible to save money by using [spot instances](https://aws.amazon.com/ec2/spot/pricing/). A spot instances let you bid on spare Amazon EC2 instances to name your own price for compute capacity. The Spot price fluctuates based on the supply and demand of available EC2 capacity. Spot prices are generally a lot lower, e.g. p2.xlarge costs about 0.2 $US, but you risk being outbid, and having your server shut down, without notice.
 
 
 Most of the technical aspects have been handled ahead of time, requiring only minimal setup on your part. If you would like to dig deepper or get the software running on your own computer a list of resources have been currated in the end of this guide.
@@ -16,30 +16,21 @@ The servers and material for this course havn't been made with security in mind,
 
 You only need to set up the system once. Once setup is complete simply follow the instrictions in *Daily Use*.
 
-### Windows People
-If you are using Windows you must download and install Git Bash from [here](https://git-scm.com/downloads). [AWS CodeCommit](http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-https-windows.html#setting-up-https-windows-install-git) supports Git versions 1.7.9 and later. We won't use the Git capabilities, we simply need to use it as a Bash terminal. 
+We have setup some Amazon Machine Images (AMI), and will be hosting them through our AWS accounts. In order to interface with the machines you will have to use AWS Command Line Interface (CLI). To get AWS CLI working we need, a Bash terminal, Python, and pip (a package manager for Python). If you are on a Mac or Linux you already have these, and you can skip to the section _Everybody_. If you are on Windows, you need to get these first.
 
-Most of installation settings aren't that important. The suggested settings are:
-* Check `Use a TrueType font in all consoles`. 
- * This makes things prettier, doesn't make any significant difference however.
-* Check `Use Git from Windows Command Prompt`.
- * This if you also want to use Git from Winows Command Prompt. We don't need it for this course.
-* 'Checkout Windows-style, commit Unix-style line endings'
- * Windows uses a different line ending character than Unix systems.
-* Check `Use Windows' default console window`.
- * This configures the terminal emulator for Git Bash.
+
+### Windows People
+If you don't have Python and pip the easiest way is to install [Anaconda](https://www.continuum.io/downloads). This will install both of them. Anaconda will also install a bunch of things you don't stricktly need, but if you want to keep using the material from this course Anaconda is a great place to start. We suggest version 2.7, as most deeplearning tools and examples are built for this version. The installer will ask you whether you want to add Python as a default, and whether it should be added to your environment path. You should tick both of these options.
+
+We also need a Bash terminal. For this we will use Git Bash. Download it from [here](https://git-scm.com/downloads). [AWS CodeCommit](http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-https-windows.html#setting-up-https-windows-install-git) supports Git versions 1.7.9 and later. We won't use the Git capabilities, we simply need to use it as a Bash terminal.
+
+Most of the installation settings aren't that important, so just choose the defaults. However on the first dialog box, called `Select Components`, tick all the boxes, if they aren't already.
 
 Use Git Bash as your terminal for the remainder of this guide.
 
-**##### DO WE NEED PYTHON ON WINDOWS, or can we just get AWS CLI MSI? http://docs.aws.amazon.com/cli/latest/userguide/installing.html#install-msi-on-windows**
-
 
 ### Everybody
-
-We have setup some Amazon Machine Images (AMI), and will be hosting them through our AWS accounts. In order to interface with the machines you will have to use AWS Command Line Interface (CLI).
-
-
-Install [AWS CLI](http://docs.aws.amazon.com/cli/latest/userguide/installing.html) by typing the following in your terminal:
+Install AWS CLI by typing the following in your terminal:
 
     pip install awscli
 
@@ -47,8 +38,9 @@ Install [AWS CLI](http://docs.aws.amazon.com/cli/latest/userguide/installing.htm
 
     pip install awscli --ignore-installed six
 
+If you run into trouble with the installation, please consult [this site](http://docs.aws.amazon.com/cli/latest/userguide/installing.html#install-with-pip).
 
-Once installed we need to configure it. We have created an user for you with the privleges to start and stop a server (read more [here](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html)). You will recieve your `<Access_ID>` and `<Secret_Key>` separately.
+Once installed we need to configure it. We have created a user for you with the privleges to start and stop a server (read more [here](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html)). You have recieved your `<Access_ID>` and `<Secret_Key>` separately. In your terminal
 
     aws configure
     AWS Access Key ID []: <Access_ID>
@@ -121,6 +113,8 @@ The privleges you were granted have been revoked (the things you setup through `
     scp -i p2-xlarge.pem -r icarus@<publicDNS>:~/02456-deep-learning/ <descitation folder>
 
 set `<destination folder` to `.` if you want to download it to the current folder
+
+All the course material is also available through [this](https://github.com/DeepLearningDTU/02456-deep-learning) github account.
 
 If you would like to continue working with AWS there are many AMI's online where a lot of the set necessary software is pre-installed. The AMI that was used for this course is based on this [one](https://github.com/Miej/GoDeeper).
 
