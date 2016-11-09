@@ -51,7 +51,7 @@ Leave the rest as their default (just press enter).
 
 You will also need the E2C Secret Key, a `.pem` file. Download it from [here](https://www.dropbox.com/s/1lht13gtyhqaryb/p2-xlarge.pem?dl=0), and save it somewhere that is easy to access. You will need to use this file everytime you want to launch your server.
 
-Set the permissions using your terminal:
+Set the permissions using your terminal (if you are unsure how to `cd` using a terminal, please consult [this](http://askubuntu.com/questions/520778/how-can-i-change-directories-in-the-terminal)):
 
     cd <path to .pem file>
     chmod 400 p2-xlarge.pem
@@ -76,16 +76,16 @@ This will print the `publicDNS` and `publicIP` (three times). Save them somewher
 Now we will connect to the actual server through `ssh`.
 
     cd <path to .pem file>
-    ssh -i "p2-xlarge.pem" icarus@<publicDNS>
+    ssh -i p2-xlarge.pem icarus@<publicDNS>
     Are you sure you want to continue connecting (yes/no)? yes
     icarus@<...>'s password: changetheworld
     
-We are now connected to the server. Start the exercises by:
+We are now connected to the server. If you wish to disconnect from the server, and get you Bash terminal back type `exit`. Start the exercises by:
 
     cd 02456-deep-learning/
     jupyter notebook
 
-We have now started a jupyter server, and are hosting it via the AWS server. View the exercises by opening your browser, and navigate to
+We have now started a jupyter server, which is hosted via the AWS server. View the exercises by opening your browser, and navigate to
 
     https://<publicIP>:8888
 
