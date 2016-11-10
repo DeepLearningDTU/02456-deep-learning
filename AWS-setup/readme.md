@@ -1,22 +1,22 @@
 # Installation Guide
 > Installation Guide is maintained by Toke Faurby, [Toke.Faurby@gmail.com](mailto:toke.faurby@gmail.com), and Kristoffer Linder-Steinlein, [linder2411@gmail.com](mailto:linder2411@gmail.com).
 
-For this course we will be using Amazon Web Services ([AWS](https://aws.amazon.com/products/)). AWS provide on-demand computing facilities. Most notably they provide servers with the powerfull [NVIDIA Tesla K80](http://www.nvidia.com/object/tesla-k80.html) graphics cards, which we will be using for this course. These servers are called [p2.xlarge](https://aws.amazon.com/ec2/instance-types/p2/), and cost about 1 $US per hour of runtime. For large tasks it is possible to save money by using [spot instances](https://aws.amazon.com/ec2/spot/pricing/). A spot instances let you bid on spare Amazon EC2 instances to name your own price for compute capacity. The Spot price fluctuates based on the supply and demand of available EC2 capacity. Spot prices are generally a lot lower, e.g. p2.xlarge costs about 0.2 $US, but you risk being outbid, and having your server shut down, without notice.
+For this course we will be using Amazon Web Services ([AWS](https://aws.amazon.com/products/)). AWS provide on-demand computing facilities. Most notably they provide servers with the powerfull [NVIDIA Tesla K80](http://www.nvidia.com/object/tesla-k80.html) graphics cards, which we will be using for this course. These servers are called [p2.xlarge](https://aws.amazon.com/ec2/instance-types/p2/), and cost about 1 $US per hour of runtime. For large tasks it is possible to save money by using [spot instances](https://aws.amazon.com/ec2/spot/pricing/). A spot instance lets you bid on spare Amazon EC2 instances to name your own price for computation capacity. The Spot price fluctuates based on the supply and demand of available EC2 capacity. Spot prices are generally a lot lower, e.g. p2.xlarge costs about 0.2 $US, but you risk being outbid, and having your server shut down, without notice.
 
 
-Most of the technical aspects have been handled ahead of time, requiring only minimal setup on your part. If you would like to dig deepper or get the software running on your own computer a list of resources have been currated in the end of this guide.
+Most of the technical aspects have been handled ahead of time, requiring only minimal setup on your part. If you would like to dig deeper or get the software running on your own computer a list of resources have been curated in the end of this guide.
 
 
 **SECURITY WARNING**
 
-The servers and material for this course havn't been made with security in mind, therefore assume that somebody could access your server, and any the data you put on it.
+The servers and material for this course haven't been made with security in mind, therefore assume that somebody could access your server, and any of the data you put on it.
 
 
 ## Setup
 
-You only need to set up the system once. Once setup is complete simply follow the instrictions in *Daily Use*.
+You only need to set up the system once. Once setup is complete simply follow the instructions in *Daily Use*.
 
-We have setup some Amazon Machine Images (AMI), and will be hosting them through our AWS accounts. In order to interface with the machines you will have to use AWS Command Line Interface (CLI). To get AWS CLI working we need, a Bash terminal, Python, and pip (a package manager for Python). If you are on a Mac or Linux you already have these, and you can skip to the section _Everybody_. If you are on Windows, you need to get these first.
+We have set up some Amazon Machine Images (AMI), and will be hosting them through our AWS accounts. In order to interface with the machines you will have to use AWS Command Line Interface (CLI). To get AWS CLI working we need, a Bash terminal, Python, and pip (a package manager for Python). If you are on a Mac or Linux you already have these, and you can skip to the section _Everybody_. If you are on Windows, you need to get these first.
 
 
 ### Windows People
@@ -43,7 +43,7 @@ If you run into trouble with the installation, please consult [this site](http:/
 ### Configuration 
 **(when you have your access ID, and secret key)**
 
-Once installed we need to configure it. We have created a user for you with the privleges to start and stop a server (read more [here](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html)). You have recieved your `<Access_ID>` and `<Secret_Key>` separately. In your terminal
+Once installed we need to configure it. We have created a user for you with the privleges to start and stop a server (read more [here](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html)). You have received your `<Access_ID>` and `<Secret_Key>` separately. In your terminal
 
     aws configure
     AWS Access Key ID []: <Access_ID>
@@ -92,7 +92,7 @@ We have now started a jupyter server, which is hosted via the AWS server. View t
 
     https://<publicIP>:8888
 
-If you have multiple instances of Jupyter running (or other processes using your ports) the `8888` might be a different number. Check the output in the terminal if the above doens't work.
+If you have multiple instances of Jupyter running (or other processes using your ports) the `8888` might be a different number. Check the output in the terminal if the above doesn't work.
 We have a self-signed certificate, so your browser will most likely come with a security complaint. Click 'advanced' (or something similar) and click 'proceed'.
 
 The password is `42`.
@@ -111,7 +111,7 @@ You should now see an overview of the course material. Enjoy!
 The servers that you used will be deleted.
 
 
-The privleges you were granted have been revoked (the things you setup through `aws config`). If you want to continue working with AWS sign up, and create your own account [here](https://aws.amazon.com/). If you want to keep the exercises, and the work that you did 
+The privileges you were granted have been revoked (the things you set up through `aws config`). If you want to continue working with AWS sign up, and create your own account [here](https://aws.amazon.com/). If you want to keep the exercises, and the work that you did 
 
     scp -i p2-xlarge.pem -r icarus@<publicDNS>:~/02456-deep-learning/ <descitation folder>
 
