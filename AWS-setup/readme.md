@@ -119,6 +119,7 @@ set `<destination folder` to `.` if you want to download it to the current folde
 
 All the course material is also available through [this](https://github.com/DeepLearningDTU/02456-deep-learning) github account.
 
-If you would like to continue working with AWS there are many AMI's online where a lot of the set necessary software is pre-installed. The AMI that was used for this course is based on this [one](https://github.com/Miej/GoDeeper).
+
+If you would like to continue working with AWS the AMI used for this course is made public, so you can recreate it if you so desire. You will need to create you own AWS account, select `Irland` as your regions, and when you `Launch Instance`, you should click `Community AMIs`. Search for `ami-b991c7ca`. You will also need to reconfigure your AWS CLI, by typing `aws configure`, and enter your own credentials. There are many AMI made available with a lot of software pre-installed. E.g. the AMI used for this course is based on this [one](https://github.com/Miej/GoDeeper).
 
 
