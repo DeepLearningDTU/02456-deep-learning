@@ -40,6 +40,9 @@ Install AWS CLI by typing the following in your terminal:
 
 If you run into trouble with the installation, please consult [this site](http://docs.aws.amazon.com/cli/latest/userguide/installing.html#install-with-pip).
 
+### Configuration 
+**(when you have your access ID, and secret key)**
+
 Once installed we need to configure it. We have created a user for you with the privleges to start and stop a server (read more [here](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html)). You have recieved your `<Access_ID>` and `<Secret_Key>` separately. In your terminal
 
     aws configure
