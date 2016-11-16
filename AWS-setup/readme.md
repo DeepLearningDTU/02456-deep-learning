@@ -108,18 +108,30 @@ You should now see an overview of the course material. Enjoy!
 
 ## After the course
 
-The servers that you used will be deleted.
+The servers that you used will be deleted. If you wish to keep using the material from the course ther are several options:
 
 
-The privleges you were granted have been revoked (the things you setup through `aws config`). If you want to continue working with AWS sign up, and create your own account [here](https://aws.amazon.com/). If you want to keep the exercises, and the work that you did 
+**Using AWS**
+
+The privleges you were granted will be revoked (the things you setup through `aws config` and the `.pem` file). If you want to continue working with AWS sign up, and create your own account [here](https://aws.amazon.com/). 
+
+
+If you would like to continue working with AWS the AMI used for this course is made public, so you can recreate it if you so desire. You will need to create you own AWS account, select `Irland` as your regions, and when you `Launch Instance`, you should click `Community AMIs`. Search for `ami-b991c7ca`. You will also need to reconfigure your AWS CLI, by typing `aws configure`, and enter your own credentials.
+
+There are many AMI made available with a lot of software pre-installed. E.g. the AMI used for this course is based on this [one](https://github.com/Miej/GoDeeper).
+
+
+
+**Exercises and course material**
+
+If you want to keep the exercises, and the work that you did 
 
     scp -i p2-xlarge.pem -r icarus@<publicDNS>:~/02456-deep-learning/ <descitation folder>
 
 set `<destination folder` to `.` if you want to download it to the current folder
 
-All the course material is also available through [this](https://github.com/DeepLearningDTU/02456-deep-learning) github account.
+All the course material is also available through [github](https://github.com/DeepLearningDTU/02456-deep-learning).
 
-
-If you would like to continue working with AWS the AMI used for this course is made public, so you can recreate it if you so desire. You will need to create you own AWS account, select `Irland` as your regions, and when you `Launch Instance`, you should click `Community AMIs`. Search for `ami-b991c7ca`. You will also need to reconfigure your AWS CLI, by typing `aws configure`, and enter your own credentials. There are many AMI made available with a lot of software pre-installed. E.g. the AMI used for this course is based on this [one](https://github.com/Miej/GoDeeper).
+If you are new to git, there is a [youtube tutorial](https://www.youtube.com/watch?v=cEGIFZDyszA&list=PL6gx4Cwl9DGAKWClAD_iKpNC0bGHxGhcx) that we recommend you watch to get up to speed.
 
 
