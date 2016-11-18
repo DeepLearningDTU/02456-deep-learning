@@ -111,7 +111,6 @@ You should now see an overview of the course material. Enjoy!
 The servers that you used will be deleted. 
 If you wish to keep using the material from the course ther are several options:
 
-
 **Amazon Web Services**
 
 The privleges you were granted have been revoked (the things you setup through `aws config`). 
@@ -137,4 +136,20 @@ set `<destination folder` to `.` if you want to download it to the current folde
 
 All the course material is also available through [github](https://github.com/DeepLearningDTU/02456-deep-learning). If you are new to git, there is a [youtube tutorial](https://www.youtube.com/watch?v=cEGIFZDyszA&list=PL6gx4Cwl9DGAKWClAD_iKpNC0bGHxGhcx) that we recommend you watch to get up to speed.
 
+
+**Software setup**
+
+Getting all the necessary software working on your own computer can be cumbersom. If you are on Linux or Mac it should be possible. Tensorflow on GPU doesn't work on Windows at time of writing. The key software that we use is:
+
+ * Python 2.7 
+   *(3.5 works for most things, not always on Windows though)
+   *(We suggest Anaconda)
+ * Theano v0.9.0.dev2
+   * (The newest version, dev4, breaks some of the exercises. If you are using Anaconda you can get it from [here](https://anaconda.org/jaikumarm/theano))
+ * Lasagne - newest
+ * TensorFlow - newest
+ * Cuda 7.5
+   * (Installing TensorFlow for 8.0 is better, but harder at the moment)
+ * cuDNN 5.0
+   * (TensorFlow has the same issue with cuDNN 5.1)
 
