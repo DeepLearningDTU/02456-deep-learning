@@ -123,9 +123,9 @@ If you want to continue working with AWS sign up, and create your own account [h
 
 If you would like to continue working with AWS the AMI used for this course is made public, so you can recreate it if you so desire. You will need to create you own AWS account, select `Irland` as your regions, and when you `Launch Instance`, you should click `Community AMIs`. Search for `ami-b991c7ca`. You will also need to reconfigure your AWS CLI, by typing `aws configure`, and enter your own credentials. There are many AMI made available with a lot of software pre-installed. E.g. the AMI used for this course is based on this [one](https://github.com/Miej/GoDeeper).
 
-You will need to configure your `Security Group`. These settings are simple and work, but don't really account for security concerns.
-
+You will need to configure your `Security Group`. These settings are simple and work, but don't really account for security concerns. For this course the following has been used:
 ![](security_group.png)
+The `Custom TCP Rules` are necessary for hosting Jupyter Notebooks over the internet.
 
 
 **Exercises and course material**
