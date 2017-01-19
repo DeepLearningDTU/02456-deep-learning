@@ -70,7 +70,7 @@ Install AWS CLI by typing the following in your shell:
 > **DEBUG:** If you run into trouble with the installation, please consult [this site](http://docs.aws.amazon.com/cli/latest/userguide/installing.html#install-with-pip).
 
 
-### Configuration 
+### AWS Configuration 
 >**Requires**: `<Access_ID>` and `<Secret_Key>`. You should have recieved these in an email.
 
 > **INFO**: Once AWS CLI is installed we need to configure it. We have created a user for you with the privleges to start and stop a server (read more [here](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html)). 
@@ -171,7 +171,7 @@ You need to request permission to use `p2.xlarge` servers. [Click here](http://a
 
 > **INFO**: These are not available at all regions at time of writing (Jan. 2017). We suggest the Irland region as it is where the course AMI is available (see below). Processing time can be up to a couple of days.
 
-**NB** If you haven't already, setup your local computer (go to top of this guide and follow it until you reach '**Configuration**').
+**NB** If you haven't already, setup your local computer (go to top of this guide and follow it until you reach '**AWS Configuration**').
 
 You need to configure AWS CLI with your own `<Access_ID>` and `<Secret_Key>`. [Click here](https://console.aws.amazon.com/iam/home#/home) to create/view them.
 
