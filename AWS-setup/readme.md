@@ -5,6 +5,7 @@ Kristoffer Linder-Steinlein, [linder2411@gmail.com](mailto:linder2411@gmail.com)
 > 
 > January 2017: Revision by 
 Toke Faurby, [Toke.Faurby@gmail.com](mailto:toke.faurby@gmail.com).
+
 ___
 <br>
 
@@ -91,8 +92,11 @@ You should also have recieved an E2C Secret Key, `<E2C_key>.pem`. Save it somewh
 > **DEBUG**: If you are unsure how to `cd` using a shell, please consult [this](http://askubuntu.com/questions/520778/how-can-i-change-directories-in-the-shell):
 
 
+
+
 ## Daily Use
 >**Requires**: `<AWS instance ID>`. You will recieve this the first day of the workshop. 
+
 
 > **INFO**: The `<AWS instance ID>` is used to identify your instance. You will use the same instance for the entirity of the course. The `AWS instance ID` will look something like this:
 >
@@ -167,7 +171,7 @@ You need to request permission to use `p2.xlarge` servers. [Click here](http://a
 
 > **INFO**: These are not available at all regions at time of writing (Jan. 2017). We suggest the Irland region as it is where the course AMI is available (see below). Processing time can be up to a couple of days.
 
-**NB** If you haven't already, setup your local computer (go to top of this guide and complete down to '**Configuration**').
+**NB** If you haven't already, setup your local computer (go to top of this guide and follow it until you reach '**Configuration**').
 
 You need to configure AWS CLI with your own `<Access_ID>` and `<Secret_Key>`. [Click here](https://console.aws.amazon.com/iam/home#/home) to create/view them.
 
