@@ -27,7 +27,7 @@ The servers and material for this course haven't been made with security in mind
 
 You only need to set up the system once. Once setup is complete simply follow the instructions in *Daily Use*.
 
-> **INFO**: We have setup some Amazon Machine Images (AMI), and will be hosting them through our AWS accounts. In order to interface with the machines you will have to use AWS Command Line Interface (CLI). 
+> **INFO**: We have setup some Amazon Machine Images (AMI), and will be hosting them through our AWS account. In order to interface with the machines you will have to use AWS Command Line Interface (CLI). 
 
 To get AWS CLI working we need:
 * a Bash shell, 
@@ -36,28 +36,29 @@ To get AWS CLI working we need:
 
 If you are on a **Mac or Linux** you already have these, and you can **skip** to the section _Everybody_. If you are on **Windows**, you need to get these first.
 
-> **INFO**: *A Note on Python versions*: The servers that you will be using runs Python 3.5 (it doesn't matter what runs on your local computer). The deep learning community has been slow to adopt 3.5, and there is definitely many that still use 2.7 (and thus a lot of software is written in 2.7). Google (developers of [TensorFlow](https://www.tensorflow.org/get_started/), the framework we will use for this workshop) however are prioritizing Python 3.5. We believe that TensorFlow is the framework with the most promise, and therefore that Python 3.5 is the better option. If you wish to use Theano and Lasagna (another framework) you are probably better of with 2.7. 
+> **INFO**: *A Note on Python versions*: The servers that you will be using runs Python 3.5 (it doesn't matter what runs on your local computer). The deep learning community has been slow to adopt 3.5, and there is definitely many that still use 2.7 (and thus a lot of software is written in 2.7). Google (developers of [TensorFlow](https://www.tensorflow.org/get_started/), the framework we will use for this workshop) however are prioritizing Python 3.5. We believe that TensorFlow is the framework with the most promise, and therefore that Python 3.5 is the better option. If you wish to use Theano and Lasagne (another framework) you are probably better of with 2.7. 
 
 ### Windows People
-> **ALTERNATIVE**: If you wish to use Python form your personal computer for more than this course we suggest install [Anaconda](https://www.continuum.io/downloads). This will install what you need for this course, as well as lot of other useful software. The installer will ask you whether you want to add Python as a default, and whether it should be added to your environment path. You should tick both of these options. Alternatively you can install just the base Python:
-
-Download and install [Python](https://www.python.org/downloads/). `pip` is automatically installed but you need to [update](https://pip.pypa.io/en/stable/installing/#upgrading-pip) it:
-
-    python -m pip install -U pip
-
-> **DEBUG**: If the **environmental variables** aren't setup correctly your prompt won't know where Python is. Either fix this, or write the full path to Python. I.e.:  ` C:\full\path\to\python.exe -m pip install -U pip`.
-
-We also need a **Bash shell**. 
+Unlike the other OSs Windows doesn't come with a Bash shell, so we need to install one. We suggest Git Bash. 
 
 > **ALTERNATIVE**: [Bash on Ubuntu on Windows](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide) might also work, we haven't tested this.
 
-For this we will use Git Bash. [Click here](https://git-scm.com/downloads) and download the newest version. [AWS CodeCommit](http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-https-windows.html#setting-up-https-windows-install-git) supports **Git versions >= 1.7.9**. Most of the installation settings aren't that important, so just choose the defaults. However on the first dialog box, called `Select Components`, tick all the boxes, if they aren't already.
+[Click here](https://git-scm.com/downloads) and download the newest version of Git Bash. [AWS CodeCommit](http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-https-windows.html#setting-up-https-windows-install-git) supports **Git versions >= 1.7.9**. Most of the installation settings aren't that important, so just choose the defaults. However on the first dialog box, called `Select Components`, tick all the boxes, if they aren't already.
 
 Use Git Bash as your shell for the remainder of this guide.
 
 > **INFO**: We won't use the Git capabilities for this course, we simply need to use it as a Bash shell. But if you don't already know how to use Git and GitHub you defineatly should get familiar with it! There are plenty of tutorials, but if you like videos you watch the first couple of videos [here](https://www.youtube.com/watch?v=cEGIFZDyszA&list=PL6gx4Cwl9DGAKWClAD_iKpNC0bGHxGhcx). Github is very widely used to collaborate, share code, and build up a personal portfolio.
 
 
+We also need to install Python.
+
+> **ALTERNATIVE**: If you wish to use Python form your personal computer for more than this course we suggest install [Anaconda](https://www.continuum.io/downloads). This will install what you need for this course, as well as lot of other useful software. The installer will ask you whether you want to add Python as a default, and whether it should be added to your environment path. You should tick both of these options. Alternatively you can install just the base Python:
+
+Download and install [Python](https://www.python.org/downloads/). `pip` is automatically installed but you need to [update](https://pip.pypa.io/en/stable/installing/#upgrading-pip) it. Open Git Bash, and type:
+
+    python -m pip install -U pip
+
+> **DEBUG**: If you get an error her there is a good change your **environmental variables** aren't setup correctly, so your computer doesn't know where Python is. Either fix this ([this might help](http://stackoverflow.com/questions/3701646/how-to-add-to-the-pythonpath-in-windows-7)), or write the full path to Python. I.e. write: ` C:\full\path\to\python.exe -m pip install -U pip`.
 
 
 
@@ -136,11 +137,13 @@ Start the exercises (if on your own server download them from [here](https://git
     cd 02456-deep-learning/
     jupyter notebook --no-browser --port=8888
 
-We have now started a Jupyter server and ported it through the `SSH` connection. View the exercises by opening your browser (e.g. Chrome), and navigate to:
+We have now started a Jupyter server and ported it through the `SSH` connection. View the exercises by opening your browser (e.g. **Chrome**) and in the address bar typing:
 
     localhost:8888
 
-The token is written in the shell, and looks something like `6a63f9b906cc7722f85bd3ea2843702515ef1842ebe628a3`.
+> **DEBUG**: Previous participants had trouble using **Safari**. Use Chrome instead.
+
+The **token** is written in the shell, and looks something like `6a63f9b906cc7722f85bd3ea2843702515ef1842ebe628a3`.
 
 You should now see an overview of the course material. **Enjoy**!
 
@@ -174,7 +177,7 @@ After this course there are many ways to improve your deep learning skills. Some
 * If you want to be on the cutting edge the best way is to reproduce the results of scientific papers. There are many places you can find these, some options are:
     * [r/MachineLearning](https://www.reddit.com/r/MachineLearning/) and [r/DeepLearning](https://www.reddit.com/r/deeplearning/) are good for news about papers.
     * [Arxiv-Sanity](http://www.arxiv-sanity.com/) helps you navigate the flood of papers on [Arxiv](https://arxiv.org/), a website for scientific papers.
-    * Twitter. A lot of big deep learning people tweet about their research, like [Yann LeCun](https://twitter.com/ylecun), [Demis Hassabis](https://twitter.com/demishassabis) (Google DeepMind), [Nando de Freitas](https://twitter.com/NandoDF), [Andrej Karpathy](https://twitter.com/karpathy), [Andrew Ng](https://twitter.com/AndrewYNg), and a lot more! (And on an unrelated note, [so am I](https://twitter.com/Faur9000).)
+    * Twitter. A lot of big deep learning people tweet about their research, like [Yann LeCun](https://twitter.com/ylecun), [Demis Hassabis](https://twitter.com/demishassabis) (DeepMind), [Nando de Freitas](https://twitter.com/NandoDF), [Andrej Karpathy](https://twitter.com/karpathy), [Andrew Ng](https://twitter.com/AndrewYNg), and a lot more! (And on an unrelated note, [so am I](https://twitter.com/Faur9000).)
 
 
 
