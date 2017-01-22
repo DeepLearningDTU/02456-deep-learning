@@ -141,8 +141,6 @@ We have now started a Jupyter server and ported it through the `SSH` connection.
 
 > **DEBUG**: Previous participants had trouble using **Safari**. Use Chrome instead.
 
-The **token** is written in the shell, and looks something like `6a63f9b906cc7722f85bd3ea2843702515ef1842ebe628a3`.
-
 You should now see an overview of the course material. **Enjoy**!
 
 > **INFO**: You can If you have multiple instances of Jupyter running (or other processes using your ports) simply change the number `8888` in all of the above (with the settings of this AMI it must however be between `8754` and `8900`). Check the output in the shell if the above doesn't work.
