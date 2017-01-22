@@ -90,7 +90,7 @@ Leave the rest as their default (just press enter).
 You also need an E2C Secret Key, `<E2C_key>.pem`. If you are using our servers, [click here](https://www.dropbox.com/s/tmu10eklgc0cdh4/DLLondon12017.pem) to download it. Save it somewhere that is easy to access. You will need to use this file everytime you want to `SSH` into your server. Set the permissions using your shell:
 
     cd <path to .pem file>
-    chmod 400 <E2C_key>.pem
+    chmod 400 <PEM_NAME>.pem
 
 > **DEBUG**: If you are unsure how to `cd` using a shell, please consult [this](http://askubuntu.com/questions/520778/how-can-i-change-directories-in-the-shell):
 
@@ -116,7 +116,7 @@ Get the **public DNS**:
 This will print the public DNS address (several times). Copy-paste it somewhere for the rest of the day. Now we will connect to the actual server through `SSH`.
 
     cd <path to .pem file>
-    ssh -i DLLondon12017.pem -L 8888:localhost:8888 ubuntu@<PublicDns>
+    ssh -i <PEM_NAME>.pem -L 8888:localhost:8888 ubuntu@<PublicDns>
     Are you sure you want to continue connecting (yes/no)? yes
     
 We are now connected to the instance. If you wish to disconnect, and get you Bash shell back type `exit`. 
@@ -160,7 +160,7 @@ Thank you!
 If you want to keep the exercises, and the work that you did:
 
     cd <path to .pem file>
-    scp -i p2-xlarge.pem -r ubuntu@<publicDNS>:~/02456-deep-learning/ <destination folder>
+    scp -i <PEM_NAME>.pem -r ubuntu@<publicDNS>:~/02456-deep-learning/ <destination folder>
 
 set `<destination folder` to `.` if you want to download it to the current folder
 
