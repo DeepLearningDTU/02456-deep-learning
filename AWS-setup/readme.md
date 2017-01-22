@@ -1,10 +1,7 @@
 # Installation Guide
-> Initial version, by 
-Toke Faurby, [Toke.Faurby@gmail.com](mailto:toke.faurby@gmail.com), and 
-Kristoffer Linder-Steinlein, [linder2411@gmail.com](mailto:linder2411@gmail.com) - **November 2016**.
+> Initial version, by Toke Faurby, [Toke.Faurby@gmail.com](mailto:toke.faurby@gmail.com), and  Kristoffer Linder-Steinlein, [linder2411@gmail.com](mailto:linder2411@gmail.com) - **November 2016**.
 > 
-> Revision by
-Toke Faurby, [Toke.Faurby@gmail.com](mailto:toke.faurby@gmail.com) - **January 2017**.
+> Revised by Toke Faurby, [Toke.Faurby@gmail.com](mailto:toke.faurby@gmail.com) - **January 2017**.
 
 ___
 <br>
@@ -90,7 +87,7 @@ Type in your shell, while inserting the appropriate `<Access_ID>` and `<Secret_K
 
 Leave the rest as their default (just press enter).
 
-You should also have recieved an E2C Secret Key, `<E2C_key>.pem`. Save it somewhere that is easy to access. You will need to use this file everytime you want to `SSH` into your server. Set the permissions using your shell:
+You also need an E2C Secret Key, `<E2C_key>.pem`. If you are using our servers, [click here](https://www.dropbox.com/s/tmu10eklgc0cdh4/DLLondon12017.pem) to download it. Save it somewhere that is easy to access. You will need to use this file everytime you want to `SSH` into your server. Set the permissions using your shell:
 
     cd <path to .pem file>
     chmod 400 <E2C_key>.pem
@@ -219,7 +216,8 @@ Create an instance:
     * You will need to configure your `Security Group`. These settings are simple and work, but don't really account for security concerns. For this course the following has been used:
     ![](security_group.png)
     * The `Custom TCP Rules` are necessary for hosting Jupyter Notebooks over the internet (not used currently).
-
+* Click Launch
+ * If you don't already have a `.pem` file create one, and save it. You will need it everytime you log on to your instance.
 
 ### Setting up your own AMI
 > **INFO**: Getting all the necessary software working on your own computer can be cumbersome, but things have gotten **A LOT** better in recent years, even on Windows, which was notoriously difficult. 
