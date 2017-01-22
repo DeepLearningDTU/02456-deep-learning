@@ -99,9 +99,7 @@ You also need an E2C Secret Key, `<E2C_key>.pem`. If you are using our servers, 
 ## Daily Use
 >**Requires**: `<AWS instance ID>`. If you are using your own AWS account you should be able to create/view them from [this link](https://eu-west-1.console.aws.amazon.com/ec2/v2/home?region=eu-west-1#). Otherwise you will receive this the first day of the workshop. 
 
-> **INFO**: The `<AWS instance ID>` is used to identify your instance. You will use the same instance for the entire of the course. The `AWS instance ID` will look something like this:
->
->    ```i-0123456789abcdefg```
+> **INFO**: The `<AWS instance ID>` is used to identify your instance. You will use the same instance for the entire of the course. The `AWS instance ID` will look something like this: `i-0123456789abcdefg`.
 
 Turn on the server (in a shell):
 
