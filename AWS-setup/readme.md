@@ -101,6 +101,9 @@ You also need an E2C Secret Key, `<E2C_key>.pem`. If you are using our servers, 
 
 > **INFO**: The `<AWS instance ID>` is used to identify your instance. You will use the same instance for the entire of the course. The `AWS instance ID` will look something like this: `i-0123456789abcdefg`.
 
+
+> **TIP**: The follwing commands will be used a couple of times through out the workshop. We recommend writing them somewhere for easy copy-paste use.
+
 Turn on the server (in a shell):
 
     aws ec2 start-instances --instance-ids <AWS instance ID>
