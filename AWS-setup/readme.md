@@ -234,7 +234,8 @@ The following guides were very useful at time of writing (Jan 2017):
 * [Zero Configuration Remote Jupyter Server](http://www.justinkiggins.com/blog/zero-configuration-remote-jupyter-server/)
 * [Running an iPython Notebook Server on AWS - EC2 Instance](http://blog.impiyush.com/2015/02/running-ipython-notebook-server-on-aws.html)
 * [Running a notebook server](http://jupyter-notebook.readthedocs.io/en/latest/public_server.html#notebook-server-security)
-* From zero to Lasagne ([Windows](), Linux)
+* From zero to Lasagne ([Windows](https://github.com/Lasagne/Lasagne/wiki/From-Zero-to-Lasagne-on-Windows-7-(64-bit)), [Linux](https://github.com/Lasagne/Lasagne/wiki/From-Zero-to-Lasagne-on-Ubuntu-14.04))
+ * Very good CUDA installation instructions (TensorFlow can be installed with `pip`).
 
 # Feedback
 We love **feedback**. Either submit a pull request, email one of the most recent creators of this guide (see top), or catch a TA during the exercises.
