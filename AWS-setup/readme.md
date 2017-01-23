@@ -159,12 +159,17 @@ Thank you!
 ### Save your work
 > **NOTE Jan. 2017**: This method is very bad and slow (will be updated). You should zip it before downloading.
 
-If you want to keep the exercises, and the work that you did:
+If you want to keep the exercises, and the work that you did, then in the shell that is connected to the server:
+
+    cd ~
+    zip -r exe.zip 02456-deep-learning/
+
+Then in another shell (or disconnect from the server):
 
     cd <path to .pem file>
-    scp -i <PEM_NAME>.pem -r ubuntu@<publicDNS>:~/02456-deep-learning/ <destination folder>
+    scp -i <PEM_NAME>.pem -r ubuntu@<publicDNS>:~/exe.zip .
 
-set `<destination folder` to `.` if you want to download it to the current folder
+`.` can be set to any `<destination folder>` to if you want to download it to somewhere else. This takes about **3 minutes**.
 
 All the course material is also available through [github](https://github.com/DeepLearningDTU/02456-deep-learning).
 
