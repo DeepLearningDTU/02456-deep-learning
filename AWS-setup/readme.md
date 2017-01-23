@@ -230,12 +230,15 @@ Create an instance:
 > **INFO**: Getting all the necessary software working on your own computer can be cumbersome, but things have gotten **A LOT** better in recent years, even on Windows, which was notoriously difficult. 
 
 The following guides were very useful at time of writing (Jan 2017):
-* [Getting CUDA 8 to Work With OpenAI Gym on AWS and Compiling TensorFlow for CUDA 8 Compatibility](https://davidsanwald.github.io/2016/11/13/building-tensorflow-with-gpu-support.html)
-* [Zero Configuration Remote Jupyter Server](http://www.justinkiggins.com/blog/zero-configuration-remote-jupyter-server/)
-* [Running an iPython Notebook Server on AWS - EC2 Instance](http://blog.impiyush.com/2015/02/running-ipython-notebook-server-on-aws.html)
-* [Running a notebook server](http://jupyter-notebook.readthedocs.io/en/latest/public_server.html#notebook-server-security)
+* [TensorFlow.org: Install CUDA and cuDNN](https://www.tensorflow.org/versions/r0.10/get_started/os_setup#optional_install_cuda_gpus_on_linux).
+* [TensorFlow.org: setup](https://www.tensorflow.org/versions/r0.10/get_started/os_setup)
 * From zero to Lasagne ([Windows](https://github.com/Lasagne/Lasagne/wiki/From-Zero-to-Lasagne-on-Windows-7-(64-bit)), [Linux](https://github.com/Lasagne/Lasagne/wiki/From-Zero-to-Lasagne-on-Ubuntu-14.04))
  * Very good CUDA installation instructions (TensorFlow can be installed with `pip`).
+* [Running a notebook server](http://jupyter-notebook.readthedocs.io/en/latest/public_server.html#notebook-server-security)
+* [Zero Configuration Remote Jupyter Server](http://www.justinkiggins.com/blog/zero-configuration-remote-jupyter-server/)
+* [Running an iPython Notebook Server on AWS - EC2 Instance](http://blog.impiyush.com/2015/02/running-ipython-notebook-server-on-aws.html)
+* [Getting CUDA 8 to Work With OpenAI Gym on AWS and Compiling TensorFlow for CUDA 8 Compatibility](https://davidsanwald.github.io/2016/11/13/building-tensorflow-with-gpu-support.html)
+ * I had some issues with thisone, but it is worth a mention.
 
 # Feedback
 We love **feedback**. Either submit a pull request, email one of the most recent creators of this guide (see top), or catch a TA during the exercises.
