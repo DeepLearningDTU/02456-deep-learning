@@ -1,7 +1,7 @@
 # Installation Guide
-> Initial version, by Toke Faurby, [Toke.Faurby@gmail.com](mailto:toke.faurby@gmail.com), and  Kristoffer Linder-Steinlein, [linder2411@gmail.com](mailto:linder2411@gmail.com) - **November 2016**.
+> Initial version by Toke Faurby, [Toke.Faurby@gmail.com](mailto:toke.faurby@gmail.com), and  Kristoffer Linder-Steinlein, [linder2411@gmail.com](mailto:linder2411@gmail.com), **November 2016**.
 > 
-> Revised by Toke Faurby, [Toke.Faurby@gmail.com](mailto:toke.faurby@gmail.com) - **January 2017**.
+> Revised by Toke Faurby, [Toke.Faurby@gmail.com](mailto:toke.faurby@gmail.com), **January 2017**.
 
 ___
 <br>
@@ -9,14 +9,12 @@ ___
 ## Introduction
 For this course we will be using Amazon Web Services ([AWS](https://aws.amazon.com/products/)). AWS provide on-demand computing facilities. Most notably they provide servers with the powerful [NVIDIA Tesla K80](http://www.nvidia.com/object/tesla-k80.html) graphics cards, which we will be using for this course. These servers are called [p2.xlarge](https://aws.amazon.com/ec2/instance-types/p2/), and cost about 1 $US per hour of runtime. For large tasks it is possible to save money by using [spot instances](https://aws.amazon.com/ec2/spot/pricing/). A spot instances let you bid on spare Amazon EC2 instances to name your own price for compute capacity. The Spot price fluctuates based on the supply and demand of available EC2 capacity. Spot prices are generally a lot lower, e.g. p2.xlarge costs about 0.2 $US, but you risk being outbid, and having your server shut down, without notice (bad for interactive sessions, good for big batch jobs).
 
-
-Most of the technical aspects have been handled ahead of time, requiring only minimal setup on your part. If you would like to dig deeper or get the software running on your own computer a list of resources have been curated in the end of this guide.
+All the necessary software has been installed and configured on the servers, so all you have to do is connect to them, requiring only minimal setup on your part. If you would like to dig deeper or get the software running on your own computer a list of resources have been curated in the end of this guide.
 
 
 **SECURITY WARNING**
 
 The servers and material for this course haven't been made with security in mind, therefore assume that somebody could access your server, and any the data you put on it.
-
 
 ## Setup
 
@@ -33,7 +31,7 @@ To get AWS CLI working we need:
 
 If you are on a **Mac or Linux** you already have these, and you can **skip** to the section _Everybody_. If you are on **Windows**, you need to get these first.
 
-> **INFO**: *A Note on Python versions*: The servers that you will be using runs Python 3.5 (it doesn't matter what runs on your local computer). The deep learning community has been slow to adopt 3.5, and there is definitely many that still use 2.7 (and thus a lot of software is written in 2.7). Google (developers of [TensorFlow](https://www.tensorflow.org/get_started/), the framework we will use for this workshop) however are prioritizing Python 3.5. We believe that TensorFlow is the framework with the most promise, and therefore that Python 3.5 is the better option. If you wish to use Theano and Lasagne (another framework) you are probably better of with 2.7. 
+> **INFO**: *A Note on Python versions*: The servers that you will be using runs Python 2.7 (it doesn't matter what runs on your local computer). The deep learning community has been slow to adopt 3.5, and many still use 2.7, and thus a lot of software is written in 2.7. Some of the software for the exercises requires Python 2.7, and we will therefore use this version. Google (developers of [TensorFlow](https://www.tensorflow.org/get_started/), the framework we will use for this workshop) however are prioritizing Python 3.5. It is therefore worth considering using this version going forward. If you wish to use Theano and Lasagne (another framework), then you are probably better of with 2.7. 
 
 ### Windows People
 Unlike the other OSs Windows doesn't come with a Bash shell, so we need to install one. We suggest Git Bash. 
@@ -44,10 +42,10 @@ Unlike the other OSs Windows doesn't come with a Bash shell, so we need to insta
 
 Use Git Bash as your shell for the remainder of this guide.
 
-> **INFO**: We won't use the Git capabilities for this course, we simply need to use it as a Bash shell. But if you don't already know how to use Git and GitHub you defineatly should get familiar with it! There are plenty of tutorials, but if you like videos you watch the first couple of videos [here](https://www.youtube.com/watch?v=cEGIFZDyszA&list=PL6gx4Cwl9DGAKWClAD_iKpNC0bGHxGhcx). Github is very widely used to collaborate, share code, and build up a personal portfolio.
+> **INFO**: We won't need the Git capabilities for this course, we simply need to use it as a Bash shell. But if you don't already know how to use Git and GitHub you defineatly should get familiar with it! There are plenty of tutorials, but if you like videos you can watch the first couple of videos [here](https://www.youtube.com/watch?v=cEGIFZDyszA&list=PL6gx4Cwl9DGAKWClAD_iKpNC0bGHxGhcx). Github is very widely used to collaborate, share code, and build up a personal portfolio.
 
 
-We also need to install Python.
+We also need to install **Python**.
 
 > **ALTERNATIVE**: If you wish to use Python form your personal computer for more than this course we suggest install [Anaconda](https://www.continuum.io/downloads). This will install what you need for this course, as well as lot of other useful software. The installer will ask you whether you want to add Python as a default, and whether it should be added to your environment path. You should tick both of these options. Alternatively you can install just the base Python:
 
