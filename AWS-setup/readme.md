@@ -209,8 +209,8 @@ Create an instance:
 * Click `Launch Instance`. 
 * **1. Choose AMI**
     * Click `Community AMIs`
-    * Search for **NOTE Jan. 2017**: *AMI is still under development*
-        * (for 2016 version use `ami-b991c7ca`).
+    * Search for `ami-63154a05` (January 2017 version)
+        * (November 2016: use `ami-b991c7ca`).
 * **2. Choose Instance Type**
     * Pick `p2.xlarge` 
 * **3. Configure Instance**
