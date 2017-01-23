@@ -90,8 +90,10 @@ You also need an E2C Secret Key, `<E2C_key>.pem`. If you are using our servers, 
     cd <path to .pem file>
     chmod 400 <PEM_NAME>.pem
 
-> **DEBUG**: If you are unsure how to `cd` using a shell, please consult [this](http://askubuntu.com/questions/520778/how-can-i-change-directories-in-the-shell):
+> **DEBUG**: If you are unsure how to `cd` using a shell, please consult [this](http://askubuntu.com/questions/520778/how-can-i-change-directories-in-the-shell)
 
+
+You have now complete the necessary setup. The remainder of the guide is for during the workshop.
 
 
 ## Daily Use
@@ -115,10 +117,13 @@ Get the **public DNS**:
 This will print the public DNS address (several times). Copy-paste it somewhere for the rest of the day. Now we will connect to the actual server through `SSH`.
 
     cd <path to .pem file>
-    ssh -i <PEM_NAME>.pem -L 8888:localhost:8888 ubuntu@<PublicDns>
+
+    ssh -i <PEM_NAME>.pem -L 6006:localhost:6006 -L 8888:localhost:8888 ubuntu@<PublicDns>
     Are you sure you want to continue connecting (yes/no)? yes
     
 We are now connected to the instance. If you wish to disconnect, and get you Bash shell back type `exit`. 
+
+> **INFO**: The way we access the exercises is through port forwarding. We will use two ports. Port `8888` for the exercises, and port `6006` for TensorBoard, a visualization tool that is very helpful during training.
 
 > **OPTIONAL**: We strongly suggest using `screen` ([guide](https://www.rackaid.com/blog/linux-screen-tutorial-and-how-to/)) ([quick reference](http://aperiodic.net/screen/quick_reference)). Linux `screen` allows you to:
 >   * Keep a shell active even through network disruptions.
@@ -131,7 +136,7 @@ We are now connected to the instance. If you wish to disconnect, and get you Bas
 Start the exercises (if on your own server download them from [here](https://github.com/DeepLearningDTU/02456-deep-learning)):
 
     cd 02456-deep-learning/
-    jupyter notebook --no-browser --port=8888
+    jupyter notebook --port=8888
 
 We have now started a Jupyter server and ported it through the `SSH` connection. View the exercises by opening your browser (e.g. **Chrome**) and in the address bar typing:
 
@@ -144,7 +149,7 @@ You should now see an overview of the course material. **Enjoy**!
 > **INFO**: You can If you have multiple instances of Jupyter running (or other processes using your ports) simply change the number `8888` in all of the above (with the settings of this AMI it must however be between `8754` and `8900`). Check the output in the shell if the above doesn't work.
 
 
-**NB: When you are done**, or not using your server please shut it down. In your shell (it doesn't matter if you are connected via `SSH` or not) type:
+**NB**: When you are done, or not using your server **please shut it down**. In your shell (it doesn't matter if you are connected via `SSH` or not) type:
 
     aws ec2 stop-instances --instance-ids <AWS instance ID>
 
