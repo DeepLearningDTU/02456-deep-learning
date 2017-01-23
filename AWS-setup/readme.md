@@ -149,7 +149,7 @@ You should now see an overview of the course material. **Enjoy**!
 > **INFO**: You can If you have multiple instances of Jupyter running (or other processes using your ports) simply change the number `8888` in all of the above (with the settings of this AMI it must however be between `8754` and `8900`). Check the output in the shell if the above doesn't work.
 
 
-**NB**: When you are done, or not using your server **please shut it down**. In your shell (it doesn't matter if you are connected via `SSH` or not) type:
+**NB**: When you are done, or not using your server, **please shut it down**. In your shell (it doesn't matter if you are connected via `SSH` or not) type:
 
     aws ec2 stop-instances --instance-ids <AWS instance ID>
 
@@ -157,9 +157,9 @@ Thank you!
 
 
 ### Save your work
-> **NOTE Jan. 2017**: This method is very bad and slow (will be updated). You should zip it before downloading.
+> **INFO**: After the course the servers will be deleted. If you wish to ave your work you can follow these instrucitons. This takes about **3 minutes**.
 
-If you want to keep the exercises, and the work that you did, then in the shell that is connected to the server:
+In the shell that is connected to the server:
 
     cd ~
     zip -r exe.zip 02456-deep-learning/
@@ -169,7 +169,7 @@ Then in another shell (or disconnect from the server):
     cd <path to .pem file>
     scp -i <PEM_NAME>.pem -r ubuntu@<publicDNS>:~/exe.zip .
 
-`.` can be set to any `<destination folder>` to if you want to download it to somewhere else. This takes about **3 minutes**.
+`.` can be set to any (local) `<destination folder>` to if you want to download it to somewhere else.
 
 All the course material is also available through [github](https://github.com/DeepLearningDTU/02456-deep-learning).
 
