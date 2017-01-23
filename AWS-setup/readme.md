@@ -226,7 +226,7 @@ Create an instance:
 * Click Launch
  * If you don't already have a `.pem` file create one, and save it. You will need it everytime you log on to your instance.
 
-### Setting up your own AMI
+### Setting up your own AMI (from scratch)
 > **INFO**: Getting all the necessary software working on your own computer can be cumbersome, but things have gotten **A LOT** better in recent years, even on Windows, which was notoriously difficult. 
 
 The following guides were very useful at time of writing (Jan 2017):
@@ -234,7 +234,7 @@ The following guides were very useful at time of writing (Jan 2017):
 * [Zero Configuration Remote Jupyter Server](http://www.justinkiggins.com/blog/zero-configuration-remote-jupyter-server/)
 * [Running an iPython Notebook Server on AWS - EC2 Instance](http://blog.impiyush.com/2015/02/running-ipython-notebook-server-on-aws.html)
 * [Running a notebook server](http://jupyter-notebook.readthedocs.io/en/latest/public_server.html#notebook-server-security)
-
+* From zero to Lasagne ([Windows](), Linux)
 
 # Feedback
 We love **feedback**. Either submit a pull request, email one of the most recent creators of this guide (see top), or catch a TA during the exercises.
