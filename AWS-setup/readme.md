@@ -164,7 +164,7 @@ In the shell that is connected to the server:
     cd ~
     zip -r exe.zip 02456-deep-learning/
 
-Then in another shell (or disconnect from the server):
+Then in a shell that isn't connected to the server:
 
     cd <path to .pem file>
     scp -i <PEM_NAME>.pem -r ubuntu@<publicDNS>:~/exe.zip .
@@ -186,7 +186,7 @@ After this course there are many ways to improve your deep learning skills. Some
 
 
 ## On your own
-> **INFO**: This section is intended to help you setup your own servers.
+> **INFO**: This section is intended to help you setup your own servers, both using our image, and to a lesser extent to create your own.
 
 
 ### Amazon Web Services
@@ -194,7 +194,7 @@ Create an [AWS account](https://aws.amazon.com/).
 
 You need to **request permission** to use `p2.xlarge` servers. [Click here](http://aws.amazon.com/contact-us/ec2-request) to request this.
 
-> **INFO**: These are not available at all regions at time of writing (Jan. 2017). We suggest the **Ireland region** as it is where the course AMI is available (see below). Processing time can be up to a couple of days.
+> **INFO**: These are not available at all regions at time of writing (Jan. 2017). We suggest the **Ireland region** as it is where the course AMI is available (see below). Processing time can be up to a couple of days. Further more we suggest applying for 5. The person recieveing your request can give permission for up to 5 instanecs, otherwise they need to consult a superior/technician.
 
 **NB** If you haven't already, setup your local computer (go to top of this guide and follow it until you reach '**AWS Configuration**').
 
