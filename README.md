@@ -1,35 +1,38 @@
-DTU course 02456 Deep learning
-=======
-This repository contains the exercises and supplementary material for course [02456 deep learning](http://www.kurser.dtu.dk/02456).
+# DTU course 02456 Deep learning v2.0 alpha
 
-Installation
-------------
-Please make sure that you read this section thoroughly and follow the installation guide from scratch before getting started with the exercises.
+This repository contains the exercises and supplementary material for course [02456 deep learning](http://kurser.dtu.dk/course/02456).
 
-All exercises are written in Python programming language and formatted into Jupyter Notebooks. In order to run the exercises you must follow the below requirements:
+## Installation
+All exercises are written in Python programming language and formatted into Jupyter Notebooks. In order to run the exercises you must satisfy the below requirements:
 
-**1. Install Anaconda (Python distribution)**
+**1. Python 3.5**
 
-- Install Anaconda for Python 2.7 from https://www.continuum.io/downloads.
+- We recommend installing via **Anaconda** from [https://www.continuum.io/downloads](https://www.continuum.io/downloads),
+as it provides many useful third party libraries. 
 
-- The installer will ask you whether you want to add Python as a default and to your environment path. You should tick both of these options.
+- We use `Python 3.5` since it is the only version TensorFlow supports on Windows 
+(at least as of May 2017).
 
-- Restart your terminal/command prompt for the environment variables to update.
+**2. Tensorflow 1.1**
 
-**2. Install and upgrade theano**
+- Follow the installation instructions at https://www.tensorflow.org/install/.
 
-- In a terminal/command prompt run: pip install theano
+- If you have a GPU install the GPU version. This greatly decreases training time.
 
-- In a terminal/command prompt run: pip install --upgrade https://github.com/Theano/Theano/archive/master.zip --no-deps
+- The exercises are tested with `TensorFLow 1.1`, but other versions might also work
 
-- If you run into problems installing Theano, please refer to: http://deeplearning.net/software/theano/index.html.
 
-**3. Install and upgrade lasagne**
+## Running the notebooks
+1. Download the repository from Github
+1. In a terminal/command prompt type: `jupyter notebook` 
+    * This should start your default browser and you should be up and running. 
+    * **Safari** is known to cause issues, so we recommend that you use the newest version of Chrome.
 
-- In a terminal/command prompt run: pip install lasagne
 
-- In a terminal/command prompt run: pip install --upgrade https://github.com/Lasagne/Lasagne/archive/master.zip --no-deps
+## Contributors
+* Ole Winther ([olewinther](https://github.com/olewinther))
+* Lars Maaløe ([larsmaaloee](https://github.com/larsmaaloee))
+* Alexander R Johansen ([alrojo](https://github.com/alrojo))
+* Jonas Busk ([jonasbusk](https://github.com/jonasbusk))
+* Toke Faurby ([faur](https://github.com/Faur))
 
-Run the notebooks
-------------
-Download the repository from Github and run in a terminal/command prompt: jupyter notebook. This should start your default browser and you should be up and running. If you have issues while running the notebooks, we recommend that you use the newest version of Chrome.
