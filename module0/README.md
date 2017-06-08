@@ -4,8 +4,9 @@ This section provides resources that aren't formally part of the teaching materi
 
 ## Content
 * `wip1_Tensorflow_basics.ipynb`: 
-  * Understand how TensorFlow works, and how to use it for simple computations.
-  * Understand how to use TensorBoard to visualize the model and the learning process.
+  * Basic TensorFlow operations, and how to use it for simple computations.
+  * Using TensorBoard to visualize the model and the learning process.
+  * Simple logistic regression example.
 
 
 
