@@ -7,6 +7,8 @@ This section provides resources that aren't formally part of the teaching materi
   * Basic TensorFlow operations, and how to use it for simple computations.
   * Using TensorBoard to visualize the model and the learning process.
   * Simple logistic regression example.
+* `demo_Launching_TensorBoard.ipynb`:
+  * Simple script that launches TensorBoard.
 
 
 
