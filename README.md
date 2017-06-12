@@ -11,7 +11,7 @@ All exercises are written in the Python programming language and formatted into 
 as it provides many useful third party libraries. 
 
 - We use `Python 3.5` since it is the only version TensorFlow supports on Windows 
-(at least as of June 2017).
+(as of May 2017).
 
 **2. TensorFlow 1.x**
 
