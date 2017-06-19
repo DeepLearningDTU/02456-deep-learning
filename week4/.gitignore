@@ -1,5 +1,3 @@
 tensorboard
-*.csv
-*.jpg
-*.png
+submission_mlp.csv
 *.zip
