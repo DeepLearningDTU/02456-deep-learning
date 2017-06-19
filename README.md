@@ -1,7 +1,5 @@
 # DTU course 02456 Deep learning v2.0 alpha
 
-This repository contains the exercises and supplementary material for course [02456 deep learning](http://kurser.dtu.dk/course/02456).
-
 ## Installation
 All exercises are written in Python programming language and formatted into Jupyter Notebooks. In order to run the exercises you must satisfy the below requirements:
 
@@ -58,4 +56,4 @@ Here is a convenient shortlist
 * Alexander R Johansen ([alrojo](https://github.com/alrojo))
 * Jonas Busk ([jonasbusk](https://github.com/jonasbusk))
 * Toke Faurby ([faur](https://github.com/Faur))
-
+* Mikkel Vilstrup ([mvil](https://github.com/MVilstrup))
