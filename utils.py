@@ -9,7 +9,6 @@ def strip_consts(graph_def, max_const_size=32):
     Created by Alex Mordvintsev
     https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/tutorials/deepdream/deepdream.ipynb
     """
-
     strip_def = tf.GraphDef()
     for n0 in graph_def.node:
         n = strip_def.node.add()
@@ -27,7 +26,6 @@ def rename_nodes(graph_def, rename_func):
     Created by Alex Mordvintsev
     https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/tutorials/deepdream/deepdream.ipynb
     """
-
     res_def = tf.GraphDef()
     for n0 in graph_def.node:
         n = res_def.node.add()
@@ -43,8 +41,6 @@ def show_graph(graph_def, max_const_size=32):
     Created by Alex Mordvintsev
     https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/tutorials/deepdream/deepdream.ipynb
     """
-
-
     if hasattr(graph_def, 'as_graph_def'):
         graph_def = graph_def.as_graph_def()
     strip_def = strip_consts(graph_def, max_const_size=max_const_size)
