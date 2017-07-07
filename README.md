@@ -58,7 +58,7 @@ From here you have to build a docker image using the command:
 
 `docker build –t deeplearning .`
 
-You can just copy the line above, but in order to shortly explain what is going on, you simple create a virtual image specified by the Docker file. This image you assign the tag `deeplearning` using the `-t` parameter. Finally you tell Docker to look for the **Dockerfile** in the current directory. This is shown graphically below:
+You can just copy the line above, but in order to shortly explain what is going on, you simple create a virtual image specified by the Docker file. This image you assign the tag `deeplearning` using the `-t` parameter to make it easier to reference this image later on. Finally you tell Docker to look for the `Dockerfile` in the current directory. This is shown graphically below:
 
 ![Building image](files/build_docker.png?raw=true)
 
@@ -71,9 +71,9 @@ A lot is going on in the command above. First we tell Docker to run an image. We
 ![Running image](files/run_docker.png?raw=true)
 
 #### Using GPU
-If you have a computer with a **GPU** which can run **CUDA** you will want to use your GPU as much as possible. This makes things a bit more complicated, but you will surely be up for the task. First of all, you have to [check whether there is a driver for your GPU](https://developer.nvidia.com/cuda-gpus). Then you will want to follow the instructions on installing **CUDA** and **CUDNN** on your operating system. With this in place you need to install  [nvidia-docker](https://github.com/NVIDIA/nvidia-docker)  in order to be able to access the GPU from the virtual machine.
+If you have a computer with a GPU which can run **CUDA** you will want to use your GPU rather than your CPU. This makes things a bit more complicated, but you will surely be up for the task. First of all, you have to [check whether there is a driver for your GPU](https://developer.nvidia.com/cuda-gpus). Then you will want to follow the instructions on installing **CUDA** and **CUDNN** on your operating system. With this in place you need to install  [nvidia-docker](https://github.com/NVIDIA/nvidia-docker)  in order to be able to access the GPU from the virtual machine.
 
-There can be quite a few complications along the way to get to this far. But once here it is very simple. All you have to do is to use the **Dockerfile.gpu** from our repository and follow the general instructions above replacing the normal `docker` command with `nvidia-docker`.
+There can be quite a few complications along the way to get to this far. But once here it is very simple. All you have to do is to use the `Dockerfile.gpu` from our repository instead of the `Dockerfile.cpu` and follow the general instructions above replacing the normal `docker` command with `nvidia-docker`.
 
 So building a Docker image becomes:
 
