@@ -53,7 +53,7 @@ RUN pip --no-cache-dir install git+git://github.com/fchollet/keras.git@${KERAS_V
 ##############################################################################
 # Setup Jupyter
 ##############################################################################
-COPY jupyter_notebook_config.py /root/.jupyter/
+COPY config.py /root/.jupyter/jupyter_notebook_config.py
 
 # Copy sample notebooks.
 COPY notebooks /notebooks
