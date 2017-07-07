@@ -1,0 +1,187 @@
+#
+# Ubuntu Dockerfile
+#
+# https://github.com/dockerfile/ubuntu
+#
+
+# Pull base image.
+FROM ubuntu:16.04
+
+MAINTAINER Mikkel Vilstrup <mikkel at vilstrup.dk>
+
+ARG TENSORFLOW_VERSION=1.2.0
+ARG TENSORFLOW_ARCH=cpu
+ARG KERAS_VERSION=2.0.5
+ARG DEBIAN_FRONTEND=noninteractive
+
+# Setup the Image.
+RUN \
+  sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
+  apt-get update && \
+  apt-get -y upgrade && \
+  apt-get install -y build-essential && \
+  apt-get install -y software-properties-common && \
+  apt-get install -y byobu curl git htop man unzip vim rsync wget && \
+  rm -rf /var/lib/apt/lists/*
+
+# Add another repo to be able to install python 3.5 specifically
+# Tensorflow currently only works with this verison of python (26/06/2017)
+RUN add-apt-repository ppa:fkrull/deadsnakes
+
+# Install other dependencies
+RUN apt-get update && apt-get install -y \
+		bc 										\
+		cmake 								\
+		g++ 									\
+		gfortran 							\
+    libfreetype6-dev      \
+    libpng12-dev          \
+    libzmq3-dev           \
+		libffi-dev 						\
+		libopenblas-dev 			\
+		libssl-dev 						\
+		python3.5							\
+    python3.5-dev					\
+    libncurses5-dev				\
+    python3-pip						\
+    python3-dev						\
+    pkg-config            \
+    libpq-dev							\
+    supervisor						\
+		liblapack-dev 				\
+		# libfreetype6-dev 			\
+		# libhdf5-dev 					\
+		# libjpeg-dev 					\
+		# liblcms2-dev 					\
+		# libopenjpeg2 					\
+		# libpng12-dev 					\
+		# libtiff5-dev 					\
+		# libwebp-dev 					\
+		# libzmq3-dev 					\
+		# opencl-headers 				\
+		# protobuf-compiler 		\
+		# libprotoc-dev 				\
+		# libboost-all-dev 			\
+		# libleveldb-dev 				\
+		# hdf5-tools 						\
+		# libhdf5-serial-dev		\
+		# libopencv-core-dev		\
+		# libopencv-highgui-dev \
+		# libsnappy-dev 				\
+		# libsnappy1 						\
+		# libatlas-base-dev 		\
+		# libstdc++6-4.8-dbg 		\
+		# libgoogle-glog0 			\
+		# libgoogle-glog-dev 		\
+		# libgflags-dev 				\
+		# liblmdb-dev 					\
+		# nano 									\
+		# pkg-config 						\
+		# zlib1g-dev 						\
+		# qt5-default 					\
+		# libvtk6-dev 					\
+		# zlib1g-dev 						\
+		# libjpeg-dev 					\
+		# libwebp-dev 					\
+		# libpng-dev 						\
+		# libtiff5-dev 					\
+		# libjasper-dev 				\
+		# libopenexr-dev 				\
+		# libgdal-dev 					\
+		# libdc1394-22-dev 			\
+		# libavcodec-dev 				\
+		# libavformat-dev 			\
+		# libswscale-dev 				\
+		# libtheora-dev 				\
+		# libvorbis-dev 				\
+		# libxvidcore-dev 			\
+		# libx264-dev 					\
+		# libpq-dev 						\
+		# libxml2-dev 					\
+		# libxslt1-dev 					\
+		# libldap2-dev 					\
+		# libsasl2-dev 					\
+		# yasm 									\
+		# libopencore-amrnb-dev \
+		# libopencore-amrwb-dev \
+		# libv4l-dev 						\
+		# libxine2-dev 					\
+		# libtbb-dev 						\
+		# libeigen3-dev 				\
+		# python-dev 						\
+		# python3.5 						\
+		# python3.5-dev 				\
+		# python3-dev						\
+		# libpq-dev 						\
+		# ant 									\
+		# supervisor 						\
+		default-jdk 					\
+		# libncurses5-dev 			\
+		# doxygen 							\
+		&& \
+	apt-get clean && \
+	apt-get autoremove && \
+	rm -rf /var/lib/apt/lists/* && \
+# Link BLAS library to use OpenBLAS using the alternatives mechanism (https://www.scipy.org/scipylib/building/linux.html#debian-ubuntu)
+	update-alternatives --set libblas.so.3 /usr/lib/openblas-base/libblas.so.3
+
+# Install pip
+RUN curl -O https://bootstrap.pypa.io/get-pip.py && \
+	python3 get-pip.py && \
+	rm get-pip.py
+
+# Install setuptools with pip3
+run pip3 install setuptools --upgrade
+
+# Add SNI support to Python
+RUN pip3 --no-cache-dir install \
+		pyopenssl \
+		ndg-httpsclient \
+		pyasn1
+
+# Install other useful Python packages using pip
+RUN pip3 --no-cache-dir install --upgrade ipython &&\
+	  pip3 --no-cache-dir install \
+				Cython \
+				pandas \
+				matplotlib \
+				numpy \
+				scikit-learn \
+				scipy \
+				scikit-image \
+				ipykernel \
+				jupyter \
+				path.py \
+				Pillow \
+				pygments \
+				six \
+				sphinx \
+				wheel \
+				zmq \
+				jupyter_core \
+				jinja2 \
+				zmq \
+				tornado \
+				jsonschema \
+				seaborn && \
+		 python3 -m ipykernel.kernelspec
+
+
+# Install TensorFlow
+RUN pip --no-cache-dir install \
+	http://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.0.0-cp27-none-linux_x86_64.whl
+
+# Install Keras
+RUN pip3 --no-cache-dir install git+git://github.com/fchollet/keras.git@${KERAS_VERSION}
+
+# Set up notebook config
+COPY jupyter_notebook_config.py /root/.jupyter/
+
+# Jupyter has issues with being run directly: https://github.com/ipython/ipython/issues/7062
+COPY run_jupyter.sh /root/
+
+# Expose Ports for TensorBoard (6006), Jupyter (8888)
+EXPOSE 6006 8888
+
+WORKDIR "/root"
+CMD ["/bin/bash"]
