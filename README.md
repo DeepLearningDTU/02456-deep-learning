@@ -56,7 +56,7 @@ With Docker installed on your system all you have to do is enter the main folder
 
 From here you have to build a docker image using the command:
 
-`docker build –t deeplearning .`
+`docker build -t deeplearning .`
 
 You can just copy the line above, but in order to shortly explain what is going on, you simple create a virtual image specified by the Docker file. This image you assign the tag `deeplearning` using the `-t` parameter to make it easier to reference this image later on. Finally you tell Docker to look for the `Dockerfile` in the current directory. This is shown graphically below:
 
@@ -64,7 +64,7 @@ You can just copy the line above, but in order to shortly explain what is going 
 
 When the image is built you want to run it. This is done with the command:
 
-`docker run –it –p 8888:8888 –v $(pwd)/notebooks:/notebooks deeplearning`
+`docker run -it -p 8888:8888 -v $(pwd)/notebooks:/notebooks deeplearning`
 
 A lot is going on in the command above. First we tell Docker to run an image. We specify it should be done in an interactive manner (through the `-it` parameter) and to map the local port `8888` to the port `8888` in the image. This allows us to access **Jupyter** from our host machine. We then tell Docker to synchronize the notebooks folder with a corresponding folder inside the image. Finally we tell Docker to use the `deeplearning` image we just created. This is shown visually below:
 
@@ -77,11 +77,11 @@ There can be quite a few complications along the way to get to this far. But onc
 
 So building a Docker image becomes:
 
-`nvidia-docker build –t deeplearning .`
+`nvidia-docker build -t deeplearning .`
 
 and running the image becomes:
 
-`nvidia-docker run –it –p 8888:8888 –v $(pwd)/notebooks:/notebooks deeplearning`
+`nvidia-docker run -it -p 8888:8888 -v $(pwd)/notebooks:/notebooks deeplearning`
 
 ## Contributors
 * Ole Winther ([olewinther](https://github.com/olewinther))
