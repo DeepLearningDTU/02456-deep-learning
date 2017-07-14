@@ -49,6 +49,12 @@ RUN conda install -c conda-forge tensorflow=1.1.0
 ##############################################################################
 RUN pip --no-cache-dir install git+git://github.com/fchollet/keras.git@${KERAS_VERSION}
 
+##############################################################################
+# Setup Language to UTF-8 for text
+##############################################################################
+# https://askubuntu.com/a/601498
+RUN apt-get clean && apt-get -y update && apt-get install -y locales && locale-gen en_US.UTF-8
+ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
 
 ##############################################################################
 # Setup Jupyter
@@ -68,7 +74,6 @@ EXPOSE 6006
 # IPython
 EXPOSE 8888
 
-RUN export TF_CPP_MIN_LOG_LEVEL=2
 # Tell docker where to go automatically
 WORKDIR "/notebooks"
 
