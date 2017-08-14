@@ -3,6 +3,8 @@ from __future__ import absolute_import, division, print_function
 import tensorflow as tf
 import numpy as np
 from IPython.display import clear_output, Image, display, HTML
+import matplotlib
+import matplotlib.pyplot as plt
 
 def strip_consts(graph_def, max_const_size=32):
     """Strip large constant values from graph_def.
@@ -85,8 +87,7 @@ def plot_decision_boundary(pred_func, X, y):
     plt.figure()
     plt.contourf(xx, yy, Z, cmap=plt.cm.RdBu)
     plt.scatter(X[:, 0], X[:, 1], c=-y, cmap=plt.cm.Spectral)
-
-
+    
 def onehot(t, num_classes):
     out = np.zeros((t.shape[0], num_classes))
     for row, col in enumerate(t):
