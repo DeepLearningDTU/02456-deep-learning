@@ -1,22 +1,11 @@
 # DTU course: 02456 Deep learning
 
 This repository contains exercises for the DTU course [*02456 Deep Learning*](http://kurser.dtu.dk/course/02456).
-All exercises are written in Python programming language and formatted into Jupyter Notebooks. 
-
-The prerequisites for running the exercises are:
-* Python 3.x
-    * The official version is `Python 3.5` since it is the only version TensorFlow supports on Windows 
-(as of May 2017), but other versions might also work.
-* TensorFlow 1.x
-    * If you have a GPU install the GPU version. This greatly decreases training time.
-
-You will need some other libraries as well, but they should be easy to install using `pip`.
-If you are unfamiliar with Jupyter we suggest that you familiarize yourself before beginning with the exercises: [quick introduction](https://www.packtpub.com/books/content/basics-jupyter-notebook-and-python), [thorough introduction](https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook#gs.a6M6p0Q). 
-But very briefly Jupyter Notebooks are interactive Python environments that allow us to combine documentation (images, text, etc.) with code.
-
+The exercises are written in Python programming language and formatted into Jupyter Notebooks.
 
 ## Running the exercises:
-To download the repository and start the exercises write the following in a terminal:
+The exercises are located in the `notebooks` folder.
+To run the exercises download the repository and start Jupyter by write the following in a terminal:
 ``` bash
 git clone https://github.com/DeepLearningDTU/02456-deep-learning.git
 cd 02456-deep-learning
@@ -27,8 +16,22 @@ jupyter notebook
 This should start your default browser and you should be up and running.
 **Safari** is known to cause issues, so we recommend that you use the newest version of Chrome.
 
+If you are unfamiliar with Jupyter we suggest that you familiarize yourself before beginning with the exercises: [quick introduction](https://www.packtpub.com/books/content/basics-jupyter-notebook-and-python), [thorough introduction](https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook#gs.a6M6p0Q). 
+But very briefly Jupyter Notebooks are interactive Python environments that allow us to combine documentation (images, text, etc.) with code.
+
+
 ## Setup
-There are three supported ways to run the exercises:
+The prerequisites for running the exercises are:
+* Python 3.x
+    * The official version is `Python 3.5` since it is the only version TensorFlow supports on Windows 
+(as of May 2017), but other versions might also work.
+* Jupyter Notebook
+* TensorFlow 1.x
+    * If you have a GPU install the GPU version. This greatly decreases training time.
+
+You will need some other libraries as well, but they should be easy to install using `pip`.
+
+There are three supported setup methods:
 1. natively on your own computer
 1. on your own computer using Docker
 1. on a server, such as Amazon Web Servicess (AWS)
@@ -41,7 +44,7 @@ Doing a local install is typically easy.
 * We recommend installing [Python 3.5 via **Anaconda**](https://www.continuum.io/downloads), as it provides many necessary third party libraries.
     * **Windows**: TensorFlow ONLY works for Python 3.5 on Windows.
 * OPTIONAL: If you have a GPU you should install [**CUDA**](https://developer.nvidia.com/cuda-downloads) and [**cuDNN**](https://developer.nvidia.com/cudnn).
-* Install [TensorFlow](https://www.tensorflow.org/install/).
+* Install [TensorFlow](https://www.tensorflow.org/install/). Note that there are different versions depending on whether you are using GPU or not.
 
 
 ___
