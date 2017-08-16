@@ -1,50 +1,34 @@
-# DTU course 02456 Deep learning v2.0 alpha
+# DTU course: 02456 Deep learning
 
-## Installation
-All exercises are written in Python programming language and formatted into Jupyter Notebooks. In order to run the exercises you must satisfy the below requirements:
+This repository contains exercises for the DTU course [*02456 Deep Learning*](http://kurser.dtu.dk/course/02456).
+All exercises are written in Python programming language and formatted into Jupyter Notebooks. 
 
-**1. Python 3.5**
+The prerequisites for running the exercises are:
+* Python 3.x
+    * The official version is `Python 3.5` since it is the only version TensorFlow supports on Windows 
+(as of May 2017), but other versions might also work.
+    * We recommend installing via **Anaconda** from [https://www.continuum.io/downloads](https://www.continuum.io/downloads),
+as it provides many necessary third party libraries.
+* TensorFlow 1.x
+    * If you have a GPU install the GPU version. This greatly decreases training time.
 
-- We recommend installing via **Anaconda** from [https://www.continuum.io/downloads](https://www.continuum.io/downloads),
-as it provides many useful third party libraries.
-
-- We use `Python 3.5` since it is the only version TensorFlow supports on Windows
-(at least as of May 2017).
-
-**2. TensorFlow 1.1**
-
-- Follow the installation instructions at https://www.tensorflow.org/install/.
-
-- If you have a GPU install the GPU version. This greatly decreases training time.
-
-- The exercises are tested with `TensorFLow 1.1`, but other versions might also work
+If you are unfamiliar with Jupyter we suggest that you familiarize yourself before beginning with the exercises: [quick introduction](https://www.packtpub.com/books/content/basics-jupyter-notebook-and-python), [thorough introduction](https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook#gs.a6M6p0Q). 
+But very briefly Jupyter Notebooks are interactive Python environments that allow us to combine documentation (images, text, etc.) with code.
 
 
-## Running the Exercises
-The exercises are created as Jupyter Notebooks.
+## Running the exercises:
+To download the repository and start the exercises write the following in a terminal in a terminal:
+``` bash
+git clone https://github.com/DeepLearningDTU/02456-deep-learning.git
+cd 02456-deep-learning
+cd notebooks
+jupyter notebook
+```
 
-If you are unfamiliar with Jupyter we suggest that you familiarize yourself beginning with the exercises: [quick introduction](https://www.packtpub.com/books/content/basics-jupyter-notebook-and-python), [thorough introduction](https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook#gs.a6M6p0Q). But very briefly Jupyter Notebooks are interactive Python environments that allow us to combine documentation (images, text, etc.) with code.
+This should start your default browser and you should be up and running.
+**Safari** is known to cause issues, so we recommend that you use the newest version of Chrome.
 
-### Acessing the exercises:
-1. Download the repository from Github
-1. In a terminal/command prompt type: `jupyter notebook`
-    * This should start your default browser and you should be up and running.
-    * **Safari** is known to cause issues, so we recommend that you use the newest version of Chrome.
 
-**TIP**: In the menue bar in the top you can go to `Help >> Keyboard Shortcuts` and see a list of shortcuts.
-Here is a convenient shortlist
-
-| Shortcut        	| Action                                                                                  	|
-|-----------------	|-----------------------------------------------------------------------------------------	|
-| `CTRL + Enter`  	| Execute current cell                                                                    	|
-| `Shift + Enger` 	| Execute current cell, and select to next                                                	|
-| `Esc`           	| Leave **edit mode** and enter **command mode**                                          	|
-| `a`             	| while in **command** mode: Create new cell above current                                    	|
-| `b`             	| while in **command** mode: Create new cell below current                                    	|
-| `dd`            	| while in **command** mode: Delete current cell                                              	|
-| `ii`            	| while in **command** mode: Interrupt kernel (same as `CTRL + c` when using Python normally) 	|
-| `Shift + Tab`   	| while in **edit** mode: Inspect element (useful for **debugging!**)                        	|
-| `l`   	 	 	| while in **edit** mode: Display line numblers (useful for **debugging!**)         
 
 ### Using Docker:
 In order to make the material as accessible as possible we have also included Dockerfiles. So you can get the code up and running quickly on any computer. Now if you are not familiar with Docker we will give you a short introduction here. However, there is great documentation on their website, and amazing tutorials around the web. So we will barely touch the surface of what you can do with Docker.
