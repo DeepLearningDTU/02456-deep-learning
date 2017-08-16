@@ -1,15 +1,15 @@
 # Installation Guide
-> Initial version by Toke Faurby, [Toke.Faurby@gmail.com](mailto:toke.faurby@gmail.com), and  Kristoffer Linder-Steinlein, [linder2411@gmail.com](mailto:linder2411@gmail.com), **November 2016**.
-> 
-> Revised by Toke Faurby, [Toke.Faurby@gmail.com](mailto:toke.faurby@gmail.com), **January 2017**.
 
-___
-<br>
+Amazon Web Services ([AWS](https://aws.amazon.com/products/)) provide on-demand computing facilities.
+Most notably they provide servers with the powerful [NVIDIA Tesla K80](http://www.nvidia.com/object/tesla-k80.html) graphics cards, which we will be using for this course.
+These servers are called [p2.xlarge](https://aws.amazon.com/ec2/instance-types/p2/), and cost about 1 $US per hour of runtime.
+For large tasks it is possible to save money by using [spot instances](https://aws.amazon.com/ec2/spot/pricing/).
+A spot instances let you bid on spare Amazon EC2 instances to name your own price for compute capacity.
+The Spot price fluctuates based on the supply and demand of available EC2 capacity.
+Spot prices are generally a lot lower, e.g. p2.xlarge costs about 0.2 $US, but you risk being outbid, and having your server shut down, without notice (bad for interactive sessions, good for big batch jobs).
 
-## Introduction
-For this course we will be using Amazon Web Services ([AWS](https://aws.amazon.com/products/)). AWS provide on-demand computing facilities. Most notably they provide servers with the powerful [NVIDIA Tesla K80](http://www.nvidia.com/object/tesla-k80.html) graphics cards, which we will be using for this course. These servers are called [p2.xlarge](https://aws.amazon.com/ec2/instance-types/p2/), and cost about 1 $US per hour of runtime. For large tasks it is possible to save money by using [spot instances](https://aws.amazon.com/ec2/spot/pricing/). A spot instances let you bid on spare Amazon EC2 instances to name your own price for compute capacity. The Spot price fluctuates based on the supply and demand of available EC2 capacity. Spot prices are generally a lot lower, e.g. p2.xlarge costs about 0.2 $US, but you risk being outbid, and having your server shut down, without notice (bad for interactive sessions, good for big batch jobs).
-
-All the necessary software has been installed and configured on the servers, so all you have to do is connect to them, requiring only minimal setup on your part. If you would like to dig deeper or get the software running on your own computer a list of resources have been curated in the end of this guide.
+All the necessary software has been installed and configured on the servers, so all you have to do is connect to them, requiring only minimal setup on your part.
+If you would like to dig deeper or get the software running on your own computer a list of resources have been curated in the end of this guide.
 
 
 **SECURITY WARNING**
@@ -184,48 +184,6 @@ After this course there are many ways to improve your deep learning skills. Some
     * Twitter. A lot of big deep learning people tweet about their research, like [Yann LeCun](https://twitter.com/ylecun), [Demis Hassabis](https://twitter.com/demishassabis) (DeepMind), [Nando de Freitas](https://twitter.com/NandoDF), [Andrej Karpathy](https://twitter.com/karpathy), [Andrew Ng](https://twitter.com/AndrewYNg), and a lot more! (And on an unrelated note, [so am I](https://twitter.com/Faur9000).)
 
 
-
-## On your own
-> **INFO**: This section is intended to help you setup your own servers, both using our image, and to a lesser extent to create your own.
-
-
-### Amazon Web Services
-Create an [AWS account](https://aws.amazon.com/). 
-
-You need to **request permission** to use `p2.xlarge` servers. [Click here](http://aws.amazon.com/contact-us/ec2-request) to request this.
-
-> **INFO**: These are not available at all regions at time of writing (Jan. 2017). We suggest the **Ireland region** as it is where the course AMI is available (see below). Processing time can be up to a couple of days. Further more we suggest applying for 5. The person recieveing your request can give permission for up to 5 instanecs, otherwise they need to consult a superior/technician.
-
-**NB** If you haven't already, setup your local computer (go to top of this guide and follow it until you reach '**AWS Configuration**').
-
-You need to configure AWS CLI with your own `<Access_ID>` and `<Secret_Key>`. [Click here](https://console.aws.amazon.com/iam/home#/home) to create/view them.
-
-> **INFO**: The AMI used for this course is made public in **Ireland**. There are many AMI made available with a lot of software pre-installed. E.g. the AMI used for the 2016 iteration of this course is based on [this one](https://github.com/Miej/GoDeeper). You can also create your own.
-
-Create an instance:
-
-* Going to [this address](https://eu-west-1.console.aws.amazon.com/ec2/v2/home). 
-* Make sure you have `Ireland` selected as your region.
-* Click `Launch Instance`. 
-* **1. Choose AMI**
-    * Click `Community AMIs`
-    * Search for `ami-63154a05` (January 2017 version)
-        * (November 2016: use `ami-b991c7ca`).
-* **2. Choose Instance Type**
-    * Pick `p2.xlarge` 
-* **3. Configure Instance**
-    * Leave at default
-* **4. Add Storage**
-    * Leave at default
-* **5. Add Tags**
-    * Name your instance
-* **6. Configure Security Group**
-    * You will need to configure your `Security Group`. These settings are simple and work, but don't really account for security concerns. For this course the following has been used:
-    ![](security_group.png)
-    * The `Custom TCP Rules` are necessary for hosting Jupyter Notebooks over the internet (not used currently).
-* Click Launch
- * If you don't already have a `.pem` file create one, and save it. You will need it everytime you log on to your instance.
-
 ### Setting up your own AMI (from scratch)
 > **INFO**: Getting all the necessary software working on your own computer can be cumbersome, but things have gotten **A LOT** better in recent years, even on Windows, which was notoriously difficult. 
 
@@ -246,3 +204,10 @@ We love **feedback**. Either submit a pull request, email one of the most recent
 Things we are aware of, but haven't gotten around to:
 * Create reference solutions.
 * Use [sparse max](https://github.com/AndreasMadsen/course-02456-sparsemax) attention for Lab 3
+
+
+___
+## Credits
+> Initial version by Toke Faurby, [Toke.Faurby@gmail.com](mailto:toke.faurby@gmail.com), and  Kristoffer Linder-Steinlein, [linder2411@gmail.com](mailto:linder2411@gmail.com), **November 2016**.
+> 
+> Revised by Toke Faurby, [Toke.Faurby@gmail.com](mailto:toke.faurby@gmail.com), **January 2017**.
