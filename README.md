@@ -21,13 +21,14 @@ But very briefly Jupyter Notebooks are interactive Python environments that allo
 
 
 ## Setup
-The prerequisites for running the exercises are:
+The primary prerequisites for running the exercises are:
 * Python 3.x
     * The official version is `Python 3.5` since it is the only version TensorFlow supports on Windows 
 (as of May 2017), but other versions might also work.
 * Jupyter Notebook
 * TensorFlow 1.x
     * If you have a GPU install the GPU version. This greatly decreases training time.
+* Keras 2.x
 
 You will need some other libraries as well, but they should be easy to install using `pip`.
 
