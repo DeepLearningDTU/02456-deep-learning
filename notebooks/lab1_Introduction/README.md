@@ -16,15 +16,23 @@ If you are new to Neural Networks, start by using the **[TensorFlow playground](
 ## Notebooks
 * `0.Installation_validation`
 	* Simple test of whether everything is installed and configured correctly.
-* `1.TUT_Introduction_to_TensorFlow`
-	* Basic TensorFlow operations, and how to use it for simple computations.
+* `1. XXX BACKPROPAGATION`
+	* XXX
+* `2.OPT_Pure_Python`
+	* OPTIONAL: A simple neural network implemented in Python, without useing linear algebra or TensorFlow.
+* `3.Linear_Algebra`
+	* Introduces neural networks, and shows how to implement them using linear algebra.
+* `4.OPT_TensorFlow_Fundamentals`
+	* OPTOINAL: Basic TensorFlow operations, and how to use it for simple computations.
 	* Using TensorBoard to visualize the computational graph and the learning process.
 	* Simple linear regression example.
-* `2.TUT_Introduction_to_Neural_Networks`
+* `5.TensorFlow`
 	* Shows how to setup and train a neural network model for the **two-moons dataset**.
 	* Automatic differentiation
 	* Advanced optimizers
-* `3.EXE_lab1_FFN_tensorflow_PT2`
+* `6.OPT_Keras`
+	* OPTIONAL: Simple notebook that introduces Keras, a high-level API for TensorFlow.
+* `7.EXE_MNIST`
 	* Develop your own neural network for the **MNIST handwritten digits dataset**.
 
 ## Jupyter tips
