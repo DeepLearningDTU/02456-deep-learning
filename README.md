@@ -148,7 +148,7 @@ ___
 * Lars Maaløe ([larsmaaloee](https://github.com/larsmaaloee))
 * Casper Sønderby ([casperkaae](https://github.com/casperkaae))
 * Søren Kaae Sønderby ([skaae](https://github.com/skaae))
-* Alexander R Johansen ([alrojo](https://github.com/alrojo))
+* Alexander R. Johansen ([alrojo](https://github.com/alrojo))
 * Jonas Busk ([jonasbusk](https://github.com/jonasbusk))
 * Toke Faurby ([faur](https://github.com/Faur))
 * Mikkel Vilstrup ([mvilstrup](https://github.com/MVilstrup))
