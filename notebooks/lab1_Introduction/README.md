@@ -7,6 +7,12 @@ After having completed this lab you should ...
 * be able to use basic TensorFlow functionalities
 * be able to setup and train a simple deep learning model
 
+
+## TensorFlow Playeground
+
+If you are new to Neural Networks, start by using the **[TensorFlow playground](http://playground.tensorflow.org/)** (very instructive visualization) to familiarize yourself with hidden layers, hidden units, activations, learning rate, etc.
+
+
 ## Notebooks
 * `0.Installation_validation`
 	* Simple test of whether everything is installed and configured correctly.
