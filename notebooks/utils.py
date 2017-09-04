@@ -224,3 +224,52 @@ class ConfusionMatrix:
         res = numerator / denominator
         res = res[~np.isnan(res)]
         return res
+
+
+def mnist_summary(mnist_data):
+    print("""Information on dataset
+    ----------------------""")
+    print("Training size:\t", mnist_data.train.num_examples)
+    print("Test size\t", mnist_data.test.num_examples)
+    print("Validation size\t", mnist_data.validation.num_examples)
+
+    print('\nData summaries')
+    print("Image shape\t\t", mnist_data.train.images[0].shape)
+    print("Image type\t\t", type(mnist_data.train.images[0][0]))
+    print("Image min/max value\t", np.min(mnist_data.train.images), '/', np.max(mnist_data.train.images))
+    print("Label shape\t\t", mnist_data.train.labels[0].shape
+)
+    print("Label type\t\t", type(mnist_data.train.labels[0][0]))
+
+
+    ## Plot a few MNIST examples
+    img_to_show = 15
+    idx = 0
+    canvas = np.zeros((28*img_to_show, img_to_show*28))
+    for i in range(img_to_show):
+        for j in range(img_to_show):
+            canvas[i*28:(i+1)*28, j*28:(j+1)*28] = mnist_data.train.images[idx].reshape((28, 28))
+            idx += 1
+    plt.figure(figsize=(4,4))
+    plt.axis('off')
+    plt.imshow(canvas, cmap='gray')
+    plt.title('MNIST handwritten digits')
+    plt.show()
+
+
+def num_params():
+    total_parameters = 0
+    for variable in tf.trainable_variables():
+        # shape is an array of tf.Dimension
+        shape = variable.get_shape()
+#         print(shape)
+#         print(len(shape))
+        variable_parameters = 1
+        for dim in shape:
+#             print(dim)
+            variable_parameters *= dim.value
+#         print(variable_parameters)
+        total_parameters += variable_parameters
+#     print(total_parameters)
+    return total_parameters
+
