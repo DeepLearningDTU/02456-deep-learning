@@ -20,12 +20,26 @@ def prediction_contours(xx, yy, predict):
     return Z.reshape(xx.shape)
 
 def predict_with_model(model, x, get_probs=False):
-    hidden_weights, hidden_bias, output_weights, output_bias = model['HW'], model['HB'], model['OW'], model['OB']
+    hidden_weights_ex = model.get('HW_Ex')
+    hidden_bias_ex = model.get('HB_Ex')
+    hidden_weights = model['HW']
+    hidden_bias = model['HB']
+    output_weights = model['OW']
+    output_bias = model['OB'] 
     
     # Forward propagation
-    hidden_values = x.dot(hidden_weights) + hidden_bias
-    hidden_activations = np.tanh(hidden_values)
-    output_values = hidden_activations.dot(output_weights) + output_bias
+    if hidden_weights_ex is not None and hidden_bias_ex is not None:
+        first_layer = x.dot(hidden_weights_ex) + hidden_bias_ex
+        first_activations = np.tanh(first_layer)
+        
+        second_layer = first_activations.dot(hidden_weights) + hidden_bias
+        second_activations = np.tanh(second_layer)
+
+        output_values = second_activations.dot(output_weights) + output_bias
+    else:
+        hidden_weights = x.dot(hidden_weights) + hidden_bias
+        hidden_activations = np.tanh(hidden_weights)
+        output_values = hidden_activations.dot(output_weights) + output_bias
     
     probs = softmax(output_values)
     if get_probs:
