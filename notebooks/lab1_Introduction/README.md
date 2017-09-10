@@ -16,8 +16,8 @@ If you are new to Neural Networks, start by using the **[TensorFlow playground](
 ## Notebooks
 * `0.Installation_validation`
 	* Simple test of whether everything is installed and configured correctly.
-* `1. XXX BACKPROPAGATION`
-	* XXX
+* `1.Backpropagation`
+	* Learn how backpropagation works by going through the computations manually for a simple example.
 * `2.OPT_Pure_Python`
 	* OPTIONAL: A simple neural network implemented in Python, without useing linear algebra or TensorFlow.
 * `3.Linear_Algebra`
