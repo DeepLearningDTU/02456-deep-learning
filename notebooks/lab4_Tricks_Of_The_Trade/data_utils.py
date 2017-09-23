@@ -34,7 +34,6 @@ class load_data():
         self._load(train_df, test_df, image_paths, image_shape)
         
     def _load(self, train_df, test_df, image_paths, image_shape):
-        print("loading data ...")
         # load train.csv
         path_dict = self._path_to_dict(image_paths) # numerate image paths and make it a dict
         # merge image paths with data frame
@@ -50,7 +49,6 @@ class load_data():
         # need to reformat the train for validation split reasons in the batch_generator
         self.train = self._format_dataset(train_data, for_train=True)
         self.test = self._format_dataset(test_data, for_train=False)
-        print("data loaded")
         
 
     def _path_to_dict(self, image_paths):
@@ -69,10 +67,6 @@ class load_data():
         return df_image
         
     def _make_dataset(self, df, image_shape, t_train=None):
-        if t_train is not None:
-            print("loading train ...")
-        else:
-            print("loading test ...")
         # make dataset
         data = dict()
         # merge image with 3x64 features
@@ -126,7 +120,6 @@ class load_data():
 class batch_generator():
     def __init__(self, data, batch_size=64, num_classes=99,
                  num_iterations=5e3, num_features=64, seed=42, val_size=0.1):
-        print("initiating batch generator")
         self._train = data.train
         self._test = data.test
         # get image size
@@ -139,7 +132,6 @@ class batch_generator():
         self._seed = seed
         self._val_size = 0.1
         self._valid_split()
-        print("batch generator initiated ...")
 
     def _valid_split(self):
         self._idcs_train, self._idcs_valid = next(iter(
