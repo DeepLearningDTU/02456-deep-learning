@@ -50,6 +50,12 @@ RUN conda install -c conda-forge tensorflow=1.1.0
 RUN pip --no-cache-dir install git+git://github.com/fchollet/keras.git@${KERAS_VERSION}
 
 ##############################################################################
+# Install OpenAI Gym
+##############################################################################
+RUN pip --no-cache-dir install gym
+RUN pip --no-cache-dir install git+https://github.com/jakevdp/JSAnimation.git
+
+##############################################################################
 # Setup Language to UTF-8 for text
 ##############################################################################
 # https://askubuntu.com/a/601498
