@@ -78,4 +78,4 @@ class Viewer(object):
         patch = plt.imshow(self.frames[0])
         plt.axis('off')
         anim = animation.FuncAnimation(plt.gcf(), lambda i: patch.set_data(self.frames[i]), frames=len(self.frames), interval=20)
-        display(display_animation(anim, default_mode='once'), autoplay=True)
+        display(display_animation(anim, default_mode='once'))
